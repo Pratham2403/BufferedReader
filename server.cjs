@@ -119,7 +119,7 @@ app.get("/thumbnail", async (req, res) => {
 app.use(express.static("dist"));
 
 // Serve index.html for the root path
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile("index.html", { root: "dist" });
 });
 
