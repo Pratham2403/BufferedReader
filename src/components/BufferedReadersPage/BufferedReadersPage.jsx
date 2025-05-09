@@ -76,24 +76,19 @@ const BufferedReadersPage = () => {
       setLoading(true);
       setError(null);
 
-      console.log("Fetching subfolders...");
 
       const subfolders = await getSubfolders();
-      console.log("Subfolders fetched:", subfolders);
 
       const pdfData = {};
 
       for (const folder of subfolders) {
-        console.log(`Fetching PDFs from folder: ${folder.name} (${folder.id})`);
         const pdfs = await getPdfsFromFolder(folder.id);
-        console.log(`PDFs in ${folder.name}:`, pdfs);
 
         if (pdfs.length > 0) {
           pdfData[folder.name] = pdfs;
         }
       }
 
-      console.log("Final PDF Data:", pdfData);
       setPdfData(pdfData);
       setLoading(false);
     }
