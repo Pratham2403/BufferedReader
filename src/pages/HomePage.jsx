@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import "./HomePage.css";
+import { HOME_FOLDER_ID } from "../../data.cjs";
 import logoImage2 from "/logo.png";
 
-const BUFFERED_READERS_FOLDER_ID = "1inj0AM4qnEjLr88-7_SGGvQpuTv804rH";
+const BUFFERED_READERS_FOLDER_ID = HOME_FOLDER_ID;
 
 const HomePage = () => {
   const navigate = useNavigate();

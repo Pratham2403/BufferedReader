@@ -1,0 +1,6 @@
+export const BUFFERED_FOLDER_ID =
+  process.env.VITE_BUFFERED_FOLDER_ID || "1J2F5-1N7NywbC9NZ6W1wDhZ_zjG2Xd1e";
+export const BYTESTREAM_FOLDER_ID =
+  process.env.VITE_BYTESTREAM_FOLDER_ID || "1nvs0pbcerRm-1pCcLOk-WJSPZ5pZnnU5";
+export const HOME_FOLDER_ID =
+  process.env.VITE_HOME_FOLDER_ID || "1EyRCMwX69l3t59rsLKDH-0v-SDyL2zg3";
