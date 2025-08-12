@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import "./BufferedReadersPage.css";
-import { BUFFERED_FOLDER_ID } from "../../../data.cjs";
+import { BUFFERED_FOLDER_ID, BASE_URL } from "../../../data.cjs";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import LoadingCircle from "../LoadingCircle/LoadingCircle.jsx";
+
 const BUFFERED_READERS_FOLDER_ID = BUFFERED_FOLDER_ID;
+const BASE_URL = BASE_URL || "http://localhost:5003"; // Ensure BASE_URL is defined
+
 
 const BufferedReadersPage = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -41,7 +44,7 @@ const BufferedReadersPage = () => {
   // 📌 Fetch Subfolders (2015-16, 2016-17)
   async function getSubfolders() {
     try {
-      const url = `http://localhost:5003/subfolders?folderId=${BUFFERED_READERS_FOLDER_ID}`;
+      const url = `${BASE_URL}/subfolders?folderId=${BUFFERED_READERS_FOLDER_ID}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch subfolders");
 
@@ -57,7 +60,7 @@ const BufferedReadersPage = () => {
   // 📌 Fetch PDFs from a Given Folder
   async function getPdfsFromFolder(folderId) {
     try {
-      const url = `http://localhost:5003/pdfs?folderId=${folderId}`;
+      const url = `${BASE_URL}/pdfs?folderId=${folderId}`;
       const response = await fetch(url);
       if (!response.ok)
         throw new Error(`Failed to fetch PDFs for folder ${folderId}`);
@@ -187,7 +190,7 @@ const BufferedReadersPage = () => {
                           </div>
                           <div className="magazine-image-container">
                             <img
-                              src={`http://localhost:5003/thumbnail?fileId=${pdf.id}`}
+                              src={`${BASE_URL}/thumbnail?fileId=${pdf.id}`}
                               className="magazine-image"
                               alt="Buffered Reader"
                             />

@@ -3,6 +3,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios for fetching the PDF
 import "./PDFFlipbook.css";
+import { BASE_URL } from "../../../data.cjs";
 import LoadingCircle from "../LoadingCircle/LoadingCircle.jsx";
 // Set up the PDF worker
 pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.mjs`;
@@ -28,7 +29,7 @@ const PdfViewer = () => {
     const fetchPdf = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5003/download?fileId=${fileId}`,
+          `${BASE_URL}/download?fileId=${fileId}`,
           { responseType: "arraybuffer" }
         );
 

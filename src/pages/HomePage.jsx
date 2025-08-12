@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import "./HomePage.css";
-import { HOME_FOLDER_ID } from "../../data.cjs";
+import { HOME_FOLDER_ID, BASE_URL } from "../../data.cjs";
 import logoImage2 from "/logo.png";
 
 const BUFFERED_READERS_FOLDER_ID = HOME_FOLDER_ID;
@@ -15,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     async function fetchLatestPdf() {
       try {
-        const url = `http://localhost:5003/pdfs?folderId=${BUFFERED_READERS_FOLDER_ID}`;
+        const url = `${BASE_URL}/pdfs?folderId=${BUFFERED_READERS_FOLDER_ID}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch PDFs`);
 
@@ -83,9 +83,7 @@ const HomePage = () => {
             <div className="monsoon-image">
               {latestPdf ? (
                 <img
-                  src={`http://localhost:5003/thumbnail?fileId=${
-                    latestPdf.id
-                  }&nocache=${Date.now()}`}
+                  src={`${BASE_URL}/thumbnail?fileId=${latestPdf.id}&nocache=${Date.now()}`}
                   alt="Buffered Reader"
                 />
               ) : null}
