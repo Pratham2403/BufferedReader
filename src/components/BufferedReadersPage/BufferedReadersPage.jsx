@@ -7,7 +7,6 @@ import Navbar from "../Navbar/Navbar.jsx";
 import LoadingCircle from "../LoadingCircle/LoadingCircle.jsx";
 
 const BUFFERED_READERS_FOLDER_ID = BUFFERED_FOLDER_ID;
-const BASE_URL = BASE_URL || "http://localhost:5003"; // Ensure BASE_URL is defined
 
 
 const BufferedReadersPage = () => {
