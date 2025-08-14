@@ -5,4 +5,4 @@ export const BYTESTREAM_FOLDER_ID =
 export const HOME_FOLDER_ID =
   process.env.VITE_HOME_FOLDER_ID || "1EyRCMwX69l3t59rsLKDH-0v-SDyL2zg3";
 export const BASE_URL =
-  process.env.VITE_APP_BUFFERED_READER_SERVICE_URI || import.meta.env.VITE_APP_BUFFERED_READER_SERVICE_URI || "http://localhost:5003";
+  process.env.VITE_APP_BUFFERED_READER_SERVICE_URI || import.meta.env.VITE_APP_BUFFERED_READER_SERVICE_URI;
