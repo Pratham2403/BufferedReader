@@ -220,25 +220,5 @@
       "photo": "/student/raj.jpg",
       "email": "24je0679@iitism.ac.in"
     }
-  ],
-  "developers": [
-    {
-      "name": "Shreyansh Shandilya",
-      "linkedin": "https://in.linkedin.com/in/shreyansh-shandilya-5a8b1b246",
-      "photo": "/student/shreyansh.jpeg",
-      "email": "#"
-    },
-    {
-      "name": "Anirban Das",
-      "linkedin": "https://in.linkedin.com/in/anirban-das-2014412b9",
-      "photo": "/student/anirban.jpeg",
-      "email": "#"
-    },
-    {
-      "name": "Shashwat Nautiyal",
-      "linkedin": "https://in.linkedin.com/in/shashwat-nautiyal-347458280",
-      "photo": "/student/Shashwat.jpg",
-      "email": "#"
-    }
   ]
 }

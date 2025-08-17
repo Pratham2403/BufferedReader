@@ -16,7 +16,7 @@ const TeamsPage = () => {
       setIsSticky(window.scrollY > 115);
 
       // Detect which section is in view
-      const sections = ['admin', 'writers', 'designers', 'developers'];
+      const sections = ['admin', 'writers', 'designers'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -81,12 +81,6 @@ const TeamsPage = () => {
             onClick={() => scrollToSection('designers')}
           >
             DESIGNERS
-          </div>
-          <div
-            className={`team-nav-item ${activeSection === 'developers' ? 'active' : ''}`}
-            onClick={() => scrollToSection('developers')}
-          >
-            DEVELOPERS
           </div>
         </div>
       </div>
@@ -171,31 +165,6 @@ const TeamsPage = () => {
           </div>
         </section>
 
-        <section id="developers" className="team-section pink-bg">
-          <div className="section-header developers-header">
-            <h2>DEVELOPERS</h2>
-          </div>
-          <div className="team-members">
-            {teamMembers.developers.map((member, index) => (
-              <div key={index} className="member-container">
-                <div className="photo-container">
-                  <img
-                    src={member.photo}
-                    alt={`${member.name} photo`}
-                    className="member-photo"
-                  />
-                </div>
-                <div className="member-info">
-                  <h3>{capitalizeFirstLetter(member.name)}</h3>
-                  <div className='lily'>
-                  <a href={member.linkedin} className="linkedin-link"><img className="LI" src="LI.png"/></a>
-                  <a href={member.email} className="linkedin-link"><img className="LI1" src="Mail.png"/></a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
 
       {/* Footer */}
